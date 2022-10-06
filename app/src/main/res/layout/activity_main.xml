@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <TextView
+        android:id="@+id/tv_level"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="28dp"
+        android:text="@string/level_1"
+        android:textSize="40sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/tv_player_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="76dp"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_warrior"
+        app:layout_constraintStart_toStartOf="@+id/iv_warrior"
+        app:layout_constraintTop_toBottomOf="@+id/tv_level"
+        tools:text="@string/player_name" />
+
+    <TextView
+        android:id="@+id/tv_enemy_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="24sp"
+        app:layout_constraintBottom_toTopOf="@+id/iv_enemy"
+        app:layout_constraintEnd_toEndOf="@+id/iv_enemy"
+        app:layout_constraintStart_toEndOf="@+id/iv_warrior"
+        tools:text="@string/enemy_name" />
+<!--Stretch Goal #2: Start working on the aesthetics of the project.  Should colors, fonts, sizes change when certain things occur?-->
+    <ImageView
+        android:id="@+id/iv_warrior"
+        android:layout_width="188dp"
+        android:layout_height="181dp"
+        android:contentDescription="@string/a_brave_night"
+        app:layout_constraintEnd_toStartOf="@+id/iv_enemy"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintHorizontal_chainStyle="packed"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player_name"
+        tools:srcCompat="@drawable/ic_warrior" />
+
+    <ImageView
+        android:id="@+id/iv_enemy"
+        android:layout_width="188dp"
+        android:layout_height="181dp"
+        android:contentDescription="@string/a_goblin_enemy_warrior"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/iv_warrior"
+        app:layout_constraintTop_toTopOf="@+id/iv_warrior"
+        tools:srcCompat="@drawable/ic_enemy" />
+
+    <TextView
+        android:id="@+id/tv_player_attacked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_warrior"
+        app:layout_constraintEnd_toEndOf="@+id/iv_warrior"
+        app:layout_constraintHorizontal_bias="0.246"
+        app:layout_constraintStart_toStartOf="@+id/iv_warrior"
+        app:layout_constraintTop_toTopOf="@+id/iv_warrior"
+        app:layout_constraintVertical_bias="0.364"
+        tools:text="-4" />
+
+    <TextView
+        android:id="@+id/tv_enemy_attacked"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="20sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toBottomOf="@+id/iv_enemy"
+        app:layout_constraintEnd_toEndOf="@+id/iv_enemy"
+        app:layout_constraintHorizontal_bias="0.349"
+        app:layout_constraintStart_toEndOf="@+id/iv_warrior"
+        app:layout_constraintTop_toTopOf="@+id/iv_enemy"
+        app:layout_constraintVertical_bias="0.246"
+        tools:text="-5" />
+
+    <TextView
+        android:id="@+id/tv_player_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_warrior"
+        app:layout_constraintStart_toStartOf="@+id/iv_warrior"
+        app:layout_constraintTop_toBottomOf="@+id/iv_warrior"
+        tools:text="Player health" />
+
+    <TextView
+        android:id="@+id/tv_enemy_health"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAlignment="textEnd"
+        android:textSize="28sp"
+        app:layout_constraintEnd_toEndOf="@+id/iv_enemy"
+        app:layout_constraintStart_toEndOf="@+id/iv_warrior"
+        app:layout_constraintTop_toBottomOf="@+id/iv_enemy"
+        tools:text="Enemy health" />
+
+    <TextView
+        android:id="@+id/tv_warcry"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="36dp"
+        android:layout_marginBottom="12dp"
+        android:textStyle="italic"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_player_health"
+        tools:text="Enemy yells his war cry at you!" />
+
+    <TextView
+        android:id="@+id/tv_player_actions"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_margin="15dp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/btn_attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tv_warcry"
+        tools:text="You missed!" />
+
+    <Button
+        android:id="@+id/btn_attack"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="88dp"
+        android:onClick="attackButtonTapped"
+        android:text="@string/attack"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/btn_defend"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/btn_defend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:onClick="defendButtonTapped"
+        android:text="@string/defend"
+        app:layout_constraintBottom_toBottomOf="@+id/btn_attack"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.5"
+        app:layout_constraintStart_toEndOf="@+id/btn_attack"
+        app:layout_constraintTop_toTopOf="@+id/btn_attack" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

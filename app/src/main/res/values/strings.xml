@@ -1,0 +1,12 @@
+<resources>
+    <string name="app_name">AState_6</string>
+    <string name="player_name">Player name</string>
+    <string name="level_1">Level 1</string>
+    <string name="enemy_name">Enemy Name</string>
+    <string name="a_goblin_enemy_warrior">A goblin enemy warrior!</string>
+    <string name="a_brave_night">A brave night</string>
+    <string name="defend">Defend!</string>
+    <string name="attack">Attack!</string>
+    <string name="insult">Make your move Fopdoodle..</string>
+    <string name="blocked">blocked!</string>
+</resources>
